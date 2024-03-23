@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:03:12 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 16:04:49 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/23 17:01:21 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ WrongCat::~WrongCat(void)
 
 WrongCat &WrongCat::operator=(const WrongCat &rhs)
 {
+	if (this == &rhs)
+		return (*this);
 	std::cout << "WrongCat Assignment Operator called" << std::endl;
 	this->type = rhs.type;
 	return (*this);
