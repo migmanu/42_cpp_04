@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:03:12 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 15:34:49 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/23 17:01:09 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ Cat::~Cat(void)
 
 Cat &Cat::operator=(const Cat &rhs)
 {
+	if (this == &rhs)
+		return (*this);
 	std::cout << "Cat Assignment Operator called" << std::endl;
 	this->type = rhs.type;
 	return (*this);
