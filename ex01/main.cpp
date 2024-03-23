@@ -6,56 +6,40 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:11:17 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 16:24:41 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/23 21:11:15 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
-
-void testAnimals(const Animal **animals, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		std::cout << "Animal " << i << " type: " << animals[i]->getType() << std::endl;
-		animals[i]->makeSound();
-	}
-}
 
 int main()
 {
 	std::string divider = "-------------------";
-	std::cout << divider << "Correct versions" << divider << std::endl;
-	const Animal *meta = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	std::cout << divider << "Types" << divider << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	std::cout << divider <<  "Sounds" << divider << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-	std::cout << divider << "Test in function" << divider << std::endl;
-	const Animal *arr[3] = {j, i, meta};
-	testAnimals(arr, 3);
-	std::cout << divider <<  "Destructors" << divider << std::endl;
-	delete meta;
-	delete j;
-	delete i;
-	std::cout << std::endl << divider << "Incorrect versions:" << divider << std::endl;
-	const WrongAnimal *wrongMeta = new WrongAnimal();
-	const WrongAnimal *wrongCat = new WrongCat();
-	std::cout << divider << "Types" << divider << std::endl;
-	std::cout << wrongCat->getType() << " " << std::endl;
-	std::cout << wrongMeta->getType() << " " << std::endl;
-	std::cout << divider <<  "Sounds" << divider << std::endl;
-	wrongCat->makeSound();
-	wrongMeta->makeSound();
-	std::cout << divider <<  "Destructors" << divider << std::endl;
-	delete wrongMeta;
-	delete wrongCat;
+
+	std::cout << divider << "Allocate animals on heap" << divider << std::endl;
+	Animal *dog_1 = new Dog();
+	Animal *cat_1 = new Cat();
+	std::cout << divider << "Create animals on stack" << divider << std::endl;
+	Dog dog_test_1;
+	Cat cat_test_1;
+	std::cout << divider << "Add ideas" << divider << std::endl;
+	dog_test_1.addIdea("I am a dog");
+	cat_test_1.addIdea("I am a Cat");
+	{
+		std::cout << divider << "Create animals on stack inside brackets" << divider << std::endl;
+		Dog dog_test_2(dog_test_1);
+		Cat cat_test_2(cat_test_1);
+		std::cout << divider << "Add new ideas to first animals, check seconds" << divider << std::endl;
+		dog_test_1.addIdea("I like bones");
+		cat_test_1.addIdea("I like muerdering birds");
+		dog_test_2.sayIdeas();
+		cat_test_2.sayIdeas();
+		std::cout << divider << "Stack animals in brackets go out of scope" << divider << std::endl;
+	}
+	std::cout << divider << "Deallocate animals on heap" << divider << std::endl;
+	delete dog_1;
+	delete cat_1;
+	std::cout << divider << "Animals on stack go out of scope" << divider << std::endl;
 	return 0;
 }

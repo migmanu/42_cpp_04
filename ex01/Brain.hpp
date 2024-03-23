@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 18:58:52 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 19:07:15 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/23 20:19:36 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ class Brain
 
 	// Overloaded Operators
 	Brain &operator=(const Brain &rhs);
+
+	// Public Member Functions
+	void addIdea(std::string idea);
+	void sayIdeas();
 
   private:
 	std::string ideas[100];
