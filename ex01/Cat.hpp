@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:00:54 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 15:38:05 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/23 19:19:47 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ class Cat : public Animal
 	std::string getType(void) const;
 	void makeSound(void) const;
 
-  protected:
-	std::string type;
-
   private:
+	std::string type;
 };
 
 #endif

@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 15:00:54 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 19:20:27 by jmigoya-         ###   ########.fr       */
+/*   Created: 2024/03/23 18:58:52 by jmigoya-          #+#    #+#             */
+/*   Updated: 2024/03/23 19:07:15 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Cat_HPP
-#define Cat_HPP
-#ifndef Animal_HPP
-#include "Animal.hpp"
-#endif
+#ifndef Brain_HPP
+#define Brain_HPP
 #include <iostream>
 #include <ostream>
 #include <string>
 
-class Cat : public Animal
+class Brain
 {
   public:
 	// Constructors and Destructors
-	Cat(void);
-	Cat(const Cat &copy);
-	~Cat();
+	Brain(void);
+	Brain(const Brain &copy);
+	~Brain(void);
 
 	// Overloaded Operators
-	Cat &operator=(const Cat &rhs);
-
-	// Public Member Functions
-	std::string getType(void) const;
-	void makeSound(void) const;
+	Brain &operator=(const Brain &rhs);
 
   private:
-	std::string type;
+	std::string ideas[100];
 };
 
 #endif
