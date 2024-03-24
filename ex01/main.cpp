@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:11:17 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 21:11:15 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/24 12:33:44 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main()
 		Cat cat_test_2(cat_test_1);
 		std::cout << divider << "Add new ideas to first animals, check seconds" << divider << std::endl;
 		dog_test_1.addIdea("I like bones");
-		cat_test_1.addIdea("I like muerdering birds");
+		cat_test_1.addIdea("I like murdering birds");
 		dog_test_2.sayIdeas();
 		cat_test_2.sayIdeas();
 		std::cout << divider << "Stack animals in brackets go out of scope" << divider << std::endl;
