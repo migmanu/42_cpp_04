@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 14:44:13 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 19:55:38 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/24 12:34:00 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Animal
 	// Public Member Functions
 	virtual std::string getType(void) const;
 	virtual void makeSound(void) const;
-	virtual void addIdea(const std::string &idea) = 0;
 
   protected:
 	std::string type;
