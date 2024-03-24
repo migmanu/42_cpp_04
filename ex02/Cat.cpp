@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:03:12 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 21:10:09 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/24 12:40:44 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat(void) : type("Cat"), brain(new Brain())
 	return;
 }
 
-Cat::Cat(const Cat &copy) : Animal()
+Cat::Cat(const Cat &copy) : AAnimal()
 {
 	std::cout << "Cat Copy Constructor called" << std::endl;
 	*this = copy;

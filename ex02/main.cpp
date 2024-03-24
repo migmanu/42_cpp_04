@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:11:17 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/24 12:33:44 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/24 12:41:20 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int main()
 {
 	std::string divider = "-------------------";
 
+	// AAnimal animal; // Error: AAnimal is abstract class
 	std::cout << divider << "Allocate animals on heap" << divider << std::endl;
-	Animal *dog_1 = new Dog();
-	Animal *cat_1 = new Cat();
+	AAnimal *dog_1 = new Dog();
+	AAnimal *cat_1 = new Cat();
 	std::cout << divider << "Create animals on stack" << divider << std::endl;
 	Dog dog_test_1;
 	Cat cat_test_1;
@@ -40,6 +41,6 @@ int main()
 	std::cout << divider << "Deallocate animals on heap" << divider << std::endl;
 	delete dog_1;
 	delete cat_1;
-	std::cout << divider << "Animals on stack go out of scope" << divider << std::endl;
+	std::cout << divider << "AAnimals on stack go out of scope" << divider << std::endl;
 	return 0;
 }

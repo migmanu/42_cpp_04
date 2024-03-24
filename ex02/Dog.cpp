@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:03:12 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 21:09:53 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/24 12:41:01 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog(void) : type("Dog"), brain(new Brain())
 	return;
 }
 
-Dog::Dog(const Dog &copy) : Animal()
+Dog::Dog(const Dog &copy) : AAnimal()
 {
 	std::cout << "Dog Copy Constructor called" << std::endl;
 	*this = copy;

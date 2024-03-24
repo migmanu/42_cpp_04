@@ -1,4 +1,4 @@
-OBJS = main.cpp Cat.cpp Dog.cpp Animal.cpp Brain.cpp
+OBJS = main.cpp Cat.cpp Dog.cpp AAnimal.cpp Brain.cpp
 
 CC = c++
 

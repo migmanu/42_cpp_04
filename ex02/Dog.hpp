@@ -6,14 +6,14 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:00:54 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 21:09:21 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/03/24 12:41:07 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Dog_HPP
 #define Dog_HPP
-#ifndef Animal_HPP
-#include "Animal.hpp"
+#ifndef AAnimal_HPP
+#include "AAnimal.hpp"
 #endif
 #ifndef Brain_HPP
 #include "Brain.hpp"
@@ -22,7 +22,7 @@
 #include <ostream>
 #include <string>
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
   public:
 	// Constructors and Destructors
