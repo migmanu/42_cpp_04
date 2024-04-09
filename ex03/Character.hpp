@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 00:11:28 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/04/04 00:12:33 by jmigoya-         ###   ########.fr       */
+/*   Created: 2024/04/04 00:22:06 by jmigoya-          #+#    #+#             */
+/*   Updated: 2024/04/04 00:32:12 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Cure_HPP
-#define Cure_HPP
-#include <iostream>
-#include <ostream>
-#include <string>
-#include "ICharacter.hpp"
-#include "AMateria.hpp"
+#ifndef Character_HPP
+#define Character_HPP
 
-class Cure : public AMateria
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include <string>
+class Character : public ICharacter
 {
   public:
 	// Constructors and Destructors
-	Cure(void);
-	Cure(const Cure &src);
-	~Cure(void);
+	Character(void);
+	Character(std::string const &name);
+	Character(const Character &src);
+	virtual ~Character(void);
 
 	// Overloaded Operators
-	Cure &operator=(const Cure &rhs);
+	Character &operator=(const Character &rhs);
 
 	// Public Member Functions
-	virtual AMateria *clone() const;
-	virtual void use(ICharacter &target);
+	std::string const &getName() const;
+	void equip(AMateria *m);
+	void unequip(int idx);
+	void use(int idx, ICharacter &target);
+
+  private:
+	std::string _name;
+	AMateria *_inventory[4];
 };
 
 #endif
