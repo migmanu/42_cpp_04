@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:15:08 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/04/09 14:32:46 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:48:55 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ int main(void)
 	delete bob;
 	delete me;
 	delete src;
-	return 0;
 	return 0;
 }
