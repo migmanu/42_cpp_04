@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:11:17 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/24 12:33:44 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:47:34 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main()
 	{
 		std::cout << divider << "Create animals on stack inside brackets" << divider << std::endl;
 		Dog dog_test_2(dog_test_1);
-		Cat cat_test_2(cat_test_1);
+		Cat cat_test_2 = cat_test_1;
 		std::cout << divider << "Add new ideas to first animals, check seconds" << divider << std::endl;
 		dog_test_1.addIdea("I like bones");
 		cat_test_1.addIdea("I like murdering birds");

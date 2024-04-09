@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:00:54 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/23 21:09:37 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:48:53 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Cat : public Animal
 	// Constructors and Destructors
 	Cat(void);
 	Cat(const Cat &copy);
-	~Cat();
+	virtual ~Cat();
 
 	// Overloaded Operators
 	Cat &operator=(const Cat &rhs);
