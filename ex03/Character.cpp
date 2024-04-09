@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 00:26:27 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/04/04 00:26:37 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/04/09 14:12:48 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ Character::Character( std::string const & name ) : _name(name)
 
 Character::Character( Character const & src ) : _name(src._name)
 {
-    // for (int i = 0; i < 4; i++)
-    //     this->_inventory[i] = src._inventory[i];
     *this = src;
     std::cout << "Character " << this->_name << " created" << std::endl;
 }
