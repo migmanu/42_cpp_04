@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 00:11:28 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/04/04 00:12:33 by jmigoya-         ###   ########.fr       */
+/*   Created: 2024/04/03 23:18:18 by jmigoya-          #+#    #+#             */
+/*   Updated: 2024/04/04 00:40:46 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Cure_HPP
-#define Cure_HPP
-#include <iostream>
-#include <ostream>
-#include <string>
-#include "ICharacter.hpp"
-#include "AMateria.hpp"
+#ifndef MateriaSource_HPP
+#define MateriaSource_HPP
 
-class Cure : public AMateria
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
+
+class MateriaSource : public IMateriaSource
 {
   public:
 	// Constructors and Destructors
-	Cure(void);
-	Cure(const Cure &src);
-	~Cure(void);
+	MateriaSource(void);
+	~MateriaSource(void);
+	MateriaSource(MateriaSource const &);
 
 	// Overloaded Operators
-	Cure &operator=(const Cure &rhs);
+	MateriaSource &operator=(MateriaSource const &);
 
 	// Public Member Functions
-	virtual AMateria *clone() const;
-	virtual void use(ICharacter &target);
+	AMateria *getMateria(std::string const &type);
+	AMateria *createMateria(std::string const &type);
+	void learnMateria(AMateria *);
+private:
+	AMateria *materias[4];
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jmigoya- <jmigoya-@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 23:06:21 by jmigoya-          #+#    #+#             */
-/*   Updated: 2024/03/24 23:07:24 by jmigoya-         ###   ########.fr       */
+/*   Updated: 2024/04/04 00:42:13 by jmigoya-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,25 @@
 #include <iostream>
 #include <ostream>
 #include <string>
+#include "ICharacter.hpp"
+class ICharacter;
 
 class AMateria
 {
   public:
 	// Constructors and Destructors
 	AMateria(void);
-	AMateria(const AMateria &copy);
-	~AMateria(void);
+	AMateria(const AMateria &src);
+	AMateria(const std::string &type);
+	virtual ~AMateria(void);
 
-	// Overloaded Operators
-	AMateria &operator=(const AMateria &rhs);
+	// Public Member Functions
+	std::string const &getType();
+	virtual AMateria *clone() const = 0;
+	virtual void use(ICharacter &target);
 
   protected:
-
-  private:
+	std::string _type;
 };
 
 #endif
